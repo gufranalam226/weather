@@ -37,6 +37,8 @@ async function weather(city){
     console.log(data);
     document.querySelector(".temp h1 ").innerHTML= Math.round(data.main.temp) + "°c";
     document.querySelector(".city ").innerHTML= data.name ;
+    document.querySelector(".humidity div ").innerHTML= data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML= data.wind.speed + "k/h";
     document.querySelector(".content").style.display="block";
     document.querySelector(".error").style.display="none";
     
@@ -49,4 +51,3 @@ searchBtn.addEventListener("click", function(){
     weather(searchInput.value);
     
 });
-
